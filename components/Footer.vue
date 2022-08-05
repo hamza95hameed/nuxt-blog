@@ -97,11 +97,7 @@
 	</footer>
 </template>
 <script>
-import Newsletter from '@/components/Newsletter'
 export default {
-	components:{
-		Newsletter
-	},
 	data() {
 		return {
 			tags: [],

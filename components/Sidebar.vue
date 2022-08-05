@@ -82,11 +82,7 @@
 
 <script>
 import axios from 'axios'
-import Shimmer from '@/components/Shimmer.vue'
 export default {
-    components: { 
-        Shimmer
-    },
     data() {
         return {
             latestPosts:[],

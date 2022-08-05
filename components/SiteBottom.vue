@@ -39,7 +39,6 @@
     </div>
 </template>
 <script>
-import Shimmer from './Shimmer.vue'
 export default {
     data() {
         return {
@@ -76,6 +75,5 @@ export default {
     mounted() {
         this.getData();
     },
-    components: { Shimmer }
 }
 </script>

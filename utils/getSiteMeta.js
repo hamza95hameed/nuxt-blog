@@ -1,8 +1,8 @@
 const type = "website";
-const url = "https://bobross.com";
-const title = "My Amazing Blog on The Joy of Painting";
-const description = "Articles focused on the beautiful art of landscape painting.";
-const mainImage = "/a-lovely-image.png";
+const url = "https://newsparho.com/";
+const title = "News Parho | Tech, Business, Travel and Life | Trending Topics";
+const description = "Welcome to News Parho, the number one source for all trending and latest news related to Tech, Business, Travel, and Life.";
+const mainImage = "https://newsparho.com/wp-content/uploads/2022/02/logo.png";
 
 export default (meta) => {
     return [

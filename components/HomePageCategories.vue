@@ -30,12 +30,9 @@
 </template>
 <script>
 import Slick from 'vue-slick'
-import Shimmer from '@/components/Shimmer.vue'
-
 export default {
     components: { 
         Slick, 
-        Shimmer
     },
     data() {
         return {

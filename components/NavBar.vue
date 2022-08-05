@@ -28,6 +28,11 @@
                                         <i class="elegant-icon icon_house_alt mr-5"></i> Home
                                     </nuxt-link>
                                 </li>
+                                <li :class="this.$route.path == '/category/automobiles' ? 'current-menu-item' :'' ">
+                                    <nuxt-link :to="{ name: 'category-slug', params: { slug: 'automobiles' }}">
+                                        Automobiles
+                                    </nuxt-link>
+                                </li>
                                 <li :class="this.$route.path == '/category/entertainment' ? 'current-menu-item' :'' ">
                                     <nuxt-link :to="{ name: 'category-slug', params: { slug: 'entertainment' }}">
                                         Entertainment
@@ -68,6 +73,11 @@
                                 <li class=" menu-item-has-children    current-menu-item ">
                                     <nuxt-link :to="{ name: 'index'}">
                                         <i class="elegant-icon icon_house_alt mr-5"></i> Home
+                                    </nuxt-link>
+                                </li>
+                                <li>
+                                    <nuxt-link :to="{ name: 'category-slug', params: { slug: 'automobiles' }}">
+                                        Automobiles
                                     </nuxt-link>
                                 </li>
                                 <li>
@@ -115,18 +125,7 @@
                                     <i class="elegant-icon social_facebook"></i>
                                 </a>
                             </li>
-                            <!-- <li class="list-inline-item"><a class="social-icon text-xs-center" style="background: #55ACF9"
-                                    href="https://twitter.com/" target="_blank" title="Twitter"><i
-                                        class="elegant-icon social_twitter"></i></a></li>
-                            <li class="list-inline-item"><a class="social-icon text-xs-center" style="background: #0a66c2"
-                                    href="https://linkedin.com/" target="_blank" title="Linkedin"><i
-                                        class="elegant-icon social_linkedin"></i></a></li> -->
                         </ul>
-                        <!-- <div class="off-canvas-toggle-cover d-inline-block">
-                            <div class="off-canvas-toggle hidden d-inline-block" id="off-canvas-toggle">
-                                <span></span>
-                            </div>
-                        </div> -->
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -156,7 +155,6 @@
     </div>
 </template>
 <script>
-    import axios from 'axios'
     export default {
         name: 'NavBar',
         data() {

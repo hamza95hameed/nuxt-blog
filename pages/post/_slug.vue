@@ -311,37 +311,40 @@ export default {
 			ogImage:''
 		}
 	},
-
+	async asyncData({$axios, route}) {
+		const {data} = await $axios.get('/posts?slug=' + route.params.slug+'&_embed=true')
+		return  {article:data[0]} ;
+	},
 	head() {
 		return {
-			title: this.pageTitle,
+			title: `${this.article.title.rendered.replace(/(<([^>]+)>)/gi, "")}`,
 			meta: [
 				...this.meta,
 				{
 					property: "article:published_time",
-					content: this.post.date,
+					content: this.$moment(`${this.article.date}`).format("MMMM D, Y"),
 				},
 				{
 					property: "article:modified_time",
-					content: this.post.modified,
+					content: this.$moment(`${this.article.modified}`).format("MMMM D, Y"),
 				},
 				{
 					property: "article:tag",
-					content: this.tags,
+					content: `${this.article._embedded['wp:term'][1]}` != [] ? `${this.article._embedded['wp:term'][1][0].name}`:''
 				},
 				{ name: "twitter:label1", content: "Written by" },
 				{ name: "twitter:data1", content:  "Hamza Hameed" },
 				{ name: "twitter:label2", content: "Filed under" },
 				{
 					name: "twitter:data2",
-					content: this.post.tags ?  this.$common.getTag(this.post) : "",
+					content:  `${this.article._embedded['wp:term'][1]}` != [] ? `${this.article._embedded['wp:term'][1][0].name}`:''
 				},
 			],
 			link: [
 				{
 					hid: "canonical",
 					rel: "canonical",
-					href: `https://bobross.com/post/${this.$route.params.slug}`,
+					href: `https://newsparho.com/post/${this.$route.params.slug}`,
 				},
 			],
 		};
@@ -350,10 +353,10 @@ export default {
 		meta() {
 			const metaData = {
 				type: "article",
-				title: this.pageTitle,
-				description: this.description,
-				url: `https://bobross.com/post/${this.$route.params.slug}`,
-				mainImage: this.ogImage,
+				title: `${this.article.title.rendered.replace(/(<([^>]+)>)/gi, "")}`,
+				description: `${this.article.excerpt.rendered.replace(/(<([^>]+)>)/gi, "")}`,
+				url: `https://newsparho.com/post/${this.$route.params.slug}`,
+				mainImage: `${this.article._embedded['wp:featuredmedia'][0].source_url}`,
 			};
 			return getSiteMeta(metaData);
 		}

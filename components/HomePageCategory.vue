@@ -159,13 +159,9 @@
 
 <script>
 import Slick from 'vue-slick'
-import Shimmer from '../components/Shimmer.vue'
-import Sidebar from '../components/Sidebar.vue'
 export default {
     components: { 
-        Slick,
-        Sidebar,
-        Shimmer
+        Slick
     },
     data() {
         return {

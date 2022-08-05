@@ -90,14 +90,7 @@
 	  
 </template>
 <script>
-// import axios from 'Axios'
-import NotFound from '@/components/NotFound';
-import Shimmer  from '@/components/Shimmer';
 export default {
-	components: { 
-		NotFound,
-		Shimmer,
-	 },
     props: ["post_type"],
 	data() {
 		return {

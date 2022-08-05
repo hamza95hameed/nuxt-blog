@@ -5,7 +5,7 @@ export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	ssr: true,
 	head: {
-		title: 'nuxt-blog',
+		title: 'News Parho | Tech, Business, Travel and Life | Trending Topics',
 		htmlAttrs: {
 			lang: 'en'
 		},
@@ -14,11 +14,11 @@ export default {
 			{ charset: "utf-8" },
 			{ name: "HandheldFriendly", content: "True" },
 			{ name: "viewport", content: "width=device-width, initial-scale=1" },
-			{ property: "og:site_name", content: "Bob Ross" },
+			{ property: "og:site_name", content: "News Parho" },
 			{
 				hid: "description",
 				name: "description",
-				content: "Articles focused on the beautiful art of landscape painting.",
+				content: "Welcome to News Parho, the number one source for all trending and latest news related to Tech, Business, Travel, and Life.",
 			},
 			{ property: "og:image:width", content: "740" },
 			{ property: "og:image:height", content: "300" },

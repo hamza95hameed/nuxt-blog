@@ -1,3 +1,4 @@
+import axios from 'axios'
 const common = {
     name: 'Common',
     getTag(post) {

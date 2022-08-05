@@ -104,10 +104,8 @@
     </div>
 </template>
 <script>
-import SinglePost from "../pages/post/_slug.vue";
 export default {
     props: ["loop", "type"],
-    components: { SinglePost }
 }
 </script>
 <style scoped>

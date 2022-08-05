@@ -19,11 +19,3 @@
         </div>
     </div>
 </template>
-<script>
-import Newsletter from '@/components/Newsletter.vue'
-export default {
-    components:{
-        Newsletter
-    }
-}
-</script>
