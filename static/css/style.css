@@ -570,3 +570,18 @@ pre{border:1px solid #eee;font-size:1em;line-height:1.8;margin:15px 0;max-width:
 	0%{box-shadow:0 0 0 0px rgba(88,108,218,0.1);}
 	100%{box-shadow:0 0 0 20px rgba(0,0,0,0);}
 }
+.text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2; /* number of lines to show */
+	-webkit-box-orient: vertical;
+	min-height: 48px;
+}
+.excerpt {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4; /* number of lines to show */
+	-webkit-box-orient: vertical;
+}

@@ -8,7 +8,7 @@
 				<div class="entry-meta align-items-center meta-2 font-small color-muted">
 					<p class="mb-5">
 					<span class="author-avatar">
-						<img class="img-circle" :src="$common.getAuthorImage(post)" alt="Steven Madden" /></span>
+						<nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" class="img-circle" :src="$common.getAuthorImage(post)" alt="Steven Madden" /></span>
 					By
 					<nuxt-link :to="{name : 'author-slug', params: { slug: $common.getAuthorSlug(post) }}"><span class="author-name font-weight-bold">{{ $common.getAuthor(post) }}</span></nuxt-link>
 					</p>
@@ -56,7 +56,7 @@
 			</div>
 
 			<figure class="image mb-30 m-auto text-center border-radius-10">
-				<img class="border-radius-10" :src="$common.getThumbnail(post)" :alt="post.title.rendered" width="100%"/>
+				<nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" class="border-radius-10" :src="$common.getThumbnail(post)" :alt="post.title.rendered" width="100%"/>
 			</figure>
 
 			<article class="entry-wraper mb-50">
@@ -108,7 +108,7 @@
 
 				<div class=" author-bio p-30 mt-50 border-radius-10 bg-white wow fadeIn animated" style="visibility: visible; animation-name: fadeIn">
 					<div class="author-image mb-30">
-						<img class="avatar" :src="$common.getAuthorImage(post)" :alt="$common.getAuthor(post)" />
+						<nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" class="avatar" :src="$common.getAuthorImage(post)" :alt="$common.getAuthor(post)" />
 					</div>
 					<div class="author-info">
 						<h4 class="font-weight-bold mb-20">
@@ -189,7 +189,7 @@
 									<div class="single-comment justify-content-between d-flex">
 										<div class="user justify-content-between d-flex align-items-center">
 											<div class="thumb">
-												<img :src="comment.author_avatar_urls[96]" :alt="comment.author_name"  width="512">
+												<nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" :src="comment.author_avatar_urls[96]" :alt="comment.author_name"  width="512" />
 											</div>
 											<div class="desc">
 												<p class="comment" v-html="comment.content.rendered"></p>
@@ -258,7 +258,7 @@
 							<div class="d-flex hover-up-2 transition-normal">
 								<div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
 									<nuxt-link class="color-white" :to="{ name: 'post-slug', params: { slug: relate.slug }}" >
-										<img :src="$common.getThumbnail(relate)" alt="10 Reasons To Start Your Own, Profitable Website!"/>
+										<nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" :src="$common.getThumbnail(relate)" alt="10 Reasons To Start Your Own, Profitable Website!"/>
 									</nuxt-link>
 								</div>
 								<div class="post-content media-body">

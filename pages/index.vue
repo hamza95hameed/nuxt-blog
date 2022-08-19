@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<Introduction></Introduction>
+		<FeatureSlider></FeatureSlider>
 		<div class="container">
 			<FeaturePost></FeaturePost>
 			<HomePageCategory></HomePageCategory>

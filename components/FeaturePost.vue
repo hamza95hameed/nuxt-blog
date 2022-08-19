@@ -206,7 +206,7 @@ export default {
             slickOptions: {
                 dots: false,
                 infinite: true,
-                arrows : true,                    
+                arrows : false,                    
                 draggable:true,
                 speed: 500,
                 slidesToShow: 1,
@@ -254,9 +254,3 @@ export default {
 	}
 }
 </script>
-<style>
-.slick-next.slick-arrow,
-.slick-prev.slick-arrow{
-    display: none !important;
-}
-</style>

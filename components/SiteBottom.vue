@@ -15,7 +15,7 @@
                                         <div class="d-flex hover-up-2 transition-normal">
                                             <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
                                                 <nuxt-link  class="color-white" :to="{ name: 'post-slug', params: { slug: post.slug }}">
-                                                    <img :src="$common.getThumbnail(post)" :alt="post.title.rendered">
+                                                    <nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" :src="$common.getThumbnail(post)" :alt="post.title.rendered" />
                                                 </nuxt-link>
                                             </div>
                                             <div class="post-content media-body">

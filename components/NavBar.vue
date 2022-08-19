@@ -5,7 +5,7 @@
                 <div class="container">
                     <div class="row pt-20 pb-20">
                         <div class="col-md-3 col-6">
-                            <nuxt-link :to="{ name: 'index'}"> <img class="logo" src="/imgs/general/logo.png" alt="Newsparho"></nuxt-link>
+                            <nuxt-link :to="{ name: 'index'}"> <nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" class="logo" src="/imgs/general/logo.png" alt="Newsparho" /></nuxt-link>
                         </div>
                         <div class="col-md-9 col-6 text-right header-top-right">
                             <button class="search-icon d-inline" @click="openSearch()">

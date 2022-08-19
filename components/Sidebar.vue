@@ -1,11 +1,11 @@
 <template>
     <div class="widget-area">
-        <div class="mb-30"><a href="#" target="_blank"><img
+        <div class="mb-30"><a href="#" target="_blank"><nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp"
                     src="https://via.placeholder.com/1500x1500?text=Top+Sidebar+Ads" style="max-width: 100%"
-                    alt="Top Sidebar Ads"></a></div>
+                    alt="Top Sidebar Ads" /></a></div>
         <div class="sidebar-widget widget-about mb-50 pt-30 pr-30 pb-30 pl-30 bg-white border-radius-5 has-border  wow fadeInUp animated">
-            <!-- <img class="about-author-img mb-25" src="https://via.placeholder.com/150x150"
-                alt="Hello, I&#039;m Hamza Hameed"> -->
+            <!-- <nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" class="about-author-img mb-25" src="https://via.placeholder.com/150x150"
+                alt="Hello, I&#039;m Hamza Hameed" /> -->
             <h5 class="mb-20">Hello, I&#039;m Hamza Hameed</h5>
             <p class="font-medium text-muted">Hi, I’m Hamza Hameed, a Lahore native, who start his career as a freelancer two years ago. As time pass I learned different skills and blogging is one them which I loved to do in free time.</p>
             <strong>Follow me: </strong>
@@ -49,7 +49,7 @@
                             <div
                                 class="post-thumb post-thumb-80 d-flex ml-15 border-radius-5 img-hover-scale overflow-hidden">
                                 <nuxt-link class="color-white" :to="{ name: 'post-slug', params: { slug: latestPost.slug }}">
-                                    <img :src="getThumbnail(latestPost)" :alt="latestPost.title.rendered">
+                                    <nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" :src="getThumbnail(latestPost)" :alt="latestPost.title.rendered" />
                                 </nuxt-link>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                 <ul class="insta-feed">
                     <li v-for="latestPost in latestPosts.slice(0,9)" :key="latestPost.id">
                         <nuxt-link :to="{ name: 'post-slug', params: { slug: latestPost.slug }}"  data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s">
-                            <img class="border-radius-5" :src="getThumbnail(latestPost)" :alt="latestPost.title.rendered" width="90" height="90">
+                            <nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" class="border-radius-5" :src="getThumbnail(latestPost)" :alt="latestPost.title.rendered" width="90" height="90" />
                         </nuxt-link>
                     </li>
                 </ul>
@@ -74,7 +74,7 @@
         </div>
         <div class="mt-30 mb-30">
             <a href="#" target="_blank">
-                <img src="https://via.placeholder.com/1500x1500?text=Bottom+Sidebar+Ads" style="max-width: 100%" alt="Bottom Sidebar Ads">
+                <nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" src="https://via.placeholder.com/1500x1500?text=Bottom+Sidebar+Ads" style="max-width: 100%" alt="Bottom Sidebar Ads" />
             </a>
         </div>
     </div>

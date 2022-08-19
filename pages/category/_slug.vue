@@ -7,7 +7,6 @@ export default {
 	layout:'layout',
 	async asyncData({$axios, route}) {
 		const {data} = await $axios.get('/categories?slug=' + route.params.slug+'&_embed=true')
-		console.log(data[0]._links);
 		return  {article:data[0]} ;
 	},
 	head() {

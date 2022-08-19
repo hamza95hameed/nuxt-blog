@@ -57,6 +57,7 @@ export default {
 
 	// Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
 	buildModules: [
+		'@nuxt/image',
 	],
 
 	// Modules: https://go.nuxtjs.dev/config-modules
@@ -72,7 +73,8 @@ export default {
 	modules: [
 		'@nuxtjs/axios',
 		'vue-social-sharing/nuxt',
-		'nuxt-moment'
+		'nuxt-moment',
+		'@nuxt/image',
 	]
 
 }

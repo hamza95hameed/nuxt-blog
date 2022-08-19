@@ -61,11 +61,12 @@
                       <h5 class="post-title mb-20 font-weight-900">
                         <nuxt-link  class="text" :to="{ name: 'post-slug', params: { slug: post.slug }}" v-html="post.title.rendered"></nuxt-link>
                       </h5>
-                      <div class="entry-meta  meta-1 float-left font-x-small text-uppercase">
-                        <span class="post-on">{{ $moment(post.date).format("MMM D, Y") }}</span>
-                        <span class="time-reading has-dot">{{ $common.readingTime(post) }}</span>
-                        <span class="post-by has-dot">{{Math.floor(Math.random() * (1000 - 1 + 1)) + 1}} views</span>
-                      </div>
+					<div class="post-excerpt mb-25 font-small text-muted excerpt" v-html="post.excerpt.rendered"></div>
+					<div class="entry-meta  meta-1 float-left font-x-small text-uppercase">
+						<span class="post-on">{{ $moment(post.date).format("MMM D, Y") }}</span>
+						<span class="time-reading has-dot">{{ $common.readingTime(post) }}</span>
+						<span class="post-by has-dot">{{Math.floor(Math.random() * (1000 - 1 + 1)) + 1}} views</span>
+					</div>
                     </div>
                   </div>
                 </div>

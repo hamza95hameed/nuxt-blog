@@ -12,7 +12,7 @@
                         <Newsletter></Newsletter>
                     </div>
                     <div class="col-lg-6 text-right d-none d-lg-block">
-                        <img src="/imgs/general/featured.png" alt="Image">
+                        <nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" src="/imgs/general/featured.png" alt="Image" />
                     </div>
                 </div>
             </div>
