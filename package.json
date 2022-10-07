@@ -25,5 +25,10 @@
   },
   "devDependencies": {
     "@nuxt/image": "^0.7.1"
+  },
+  "engines" : { 
+    "npm" : ">=7.6.0",
+    "node" : ">=16.16.0"
   }
+
 }
