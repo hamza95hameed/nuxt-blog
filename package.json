@@ -26,9 +26,21 @@
   "devDependencies": {
     "@nuxt/image": "^0.7.1"
   },
-  "engines" : { 
-    "npm" : ">=7.6.0",
-    "node" : ">=16.16.0"
-  }
-
+  "engines": {
+    "npm": ">=7.6.0",
+    "node": ">=16.16.0"
+  },
+  "description": "```bash\r # install dependencies\r $ npm install",
+  "main": "nuxt.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamza95hameed/nuxt-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamza95hameed/nuxt-blog/issues"
+  },
+  "homepage": "https://github.com/hamza95hameed/nuxt-blog#readme"
 }
