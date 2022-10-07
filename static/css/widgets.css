@@ -85,7 +85,7 @@ span.has-dot::before{content:"";width:3px;height:3px;background:#999;border-radi
 
 /*featured-slider-2*/
 .featured-slider-2-items .post-thumb .thumb-overlay,
-.featured-slider-3-items .post-thumb .thumb-overlay{min-height:600px;background-position:center;}
+.featured-slider-3-items .post-thumb .thumb-overlay{min-height:600px;background-position:center;width:100%;object-fit:cover;}
 .featured-slider-2 .post-content-overlay{position:absolute;transition-duration:0.2s;width:100%;bottom:80px;z-index:500;}
 .featured-slider-2 .post-content-overlay .post-title{max-width:50%;}
 .featured-slider-2-nav-cover{position:absolute;bottom:80px;right:0;width:33%;}
