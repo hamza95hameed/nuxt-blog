@@ -58,6 +58,7 @@ export default {
 	// Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
 	buildModules: [
 		'@nuxt/image',
+		'nuxt-compress'
 	],
 
 	// Modules: https://go.nuxtjs.dev/config-modules
