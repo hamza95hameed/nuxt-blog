@@ -29,7 +29,7 @@
   },
   "engines": {
     "npm": "8.11.0",
-    "node": "16.16.0"
+    "node": "16.x"
   },
   "description": "```bash\r # install dependencies\r $ npm install",
   "main": "nuxt.config.js",
