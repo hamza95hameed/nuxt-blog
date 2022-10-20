@@ -317,7 +317,7 @@ export default {
 	},
 	head() {
 		return {
-			title: `${this.article.title.rendered.replace(/(<([^>]+)>)/gi, "")}`,
+			title: this.decodeHtml(`${this.article.title.rendered.replace(/(<([^>]+)>)/gi, "")}`),
 			meta: [
 				...this.meta,
 				{
@@ -383,6 +383,11 @@ export default {
                 }).finally(() => {
             });
         },
+		decodeHtml(html) {
+			var txt = document.createElement("textarea");
+			txt.innerHTML = html;
+			return txt.value;
+		},
 		async postData() {
 			let post          = await this.$axios.get('/posts?slug=' + this.$route.params.slug, { params: this.queryOptions })
 			this.post         = post.data[0]               
