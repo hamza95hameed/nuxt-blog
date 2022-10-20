@@ -75,6 +75,9 @@ export default {
 		'vue-social-sharing/nuxt',
 		'nuxt-moment',
 		'@nuxt/image',
-	]
+	],
+	generate: {
+		dir: 'public'	
+	}
 
 }
