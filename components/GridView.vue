@@ -21,8 +21,7 @@
 					<span class="top-left-icon bg-warning">
 						<button class="elegant-icon bg-transparent border-0" :class="postIDs.indexOf(post.id) !== -1 || (postID == post.id && bookmarkClass) ? 'icon_star': 'icon_star_alt'" :data-bookmark="'bookmark-'+post.id" v-on:click="bookmark(post)"></button>
 					</span>
-                    <ul class="social-share">
-						<li><a href="#"><i class="elegant-icon social_share"></i></a></li>
+                    <ul class="social-share">						
 						<li>
 							<ShareNetwork
 							network="facebook"

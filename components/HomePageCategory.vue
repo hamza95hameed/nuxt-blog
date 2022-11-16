@@ -20,8 +20,7 @@
                                                     <span class="top-left-icon bg-warning">
                                                         <button class="elegant-icon bg-transparent border-0" :data-bookmark="'bookmark-'+post.id" :class="postIDs.indexOf(post.id) !== -1 ? 'icon_star': 'icon_star_alt'" v-on:click="$common.bookmark(post)"></button>
                                                     </span>
-                                                    <ul class="social-share">
-                                                        <li><a href="#"><i class="elegant-icon social_share"></i></a></li>
+                                                    <ul class="social-share">                                                        
                                                         <li>
                                                             <ShareNetwork
                                                             network="facebook"
@@ -90,7 +89,7 @@
                                                     <nuxt-link class="img-link" :to="{ name: 'post-slug', params: { slug: latestPost.slug }}"></nuxt-link>
                                                 </div>
                                                 <ul class="social-share">
-                                                    <li><a href="#"><i class="elegant-icon social_share"></i></a></li>
+                                                    
                                                     <li>
                                                         <ShareNetwork
                                                         network="facebook"

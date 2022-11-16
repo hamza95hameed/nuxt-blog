@@ -22,8 +22,7 @@
                                                 :style="'background-image: url('+$common.getThumbnail(post)+')'">
                                                 <nuxt-link class="img-link" :to="{ name: 'post-slug', params: { slug: post.slug }}"></nuxt-link>
                                             </div>
-                                            <ul class="social-share">
-                                                <li><a href="#"><i class="elegant-icon social_share"></i></a></li>
+                                            <ul class="social-share">                                                
                                                 <li>
                                                     <ShareNetwork
                                                     network="facebook"

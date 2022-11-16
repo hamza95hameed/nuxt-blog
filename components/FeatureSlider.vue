@@ -4,7 +4,7 @@
             <slick ref="slick" :options="slickOptions" v-if="posts.length > 0">
                 <div class="slider-single" v-for="post in posts.slice(0,4)" :key="post.id">
                     <div class="post-thumb position-relative">
-                        <nuxt-img class="thumb-overlay position-relative" :src="$common.getThumbnail(post)" sizes="sm:100vw md:50vw lg:400px" format="webp" height="600"></nuxt-img>
+                        <nuxt-img class="thumb-overlay position-relative" :src="$common.getThumbnail(post)" sizes="sm:100vw md:50vw lg:400px" format="webp" height="600" :alt="decodeHtml(post.title.rendered)"></nuxt-img>
                         <div class="post-content-overlay">
                             <div class="container">
                                 <div class="entry-meta meta-0 font-small mb-20">
@@ -32,7 +32,7 @@
                     <div class="slider-post-thumb mr-15 mt-20 position-relative w-100" @click="changeSlide(index)" v-for="(post, index) in posts.slice(0,4)" :key="post.id">
                         <div class="d-flex hover-up-2 transition-normal">
                             <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5">
-                                <img class="border-radius-5" :src="$common.getThumbnail(post)" alt="The Top 2020 Handbag Trends to Know">
+                                <nuxt-img class="border-radius-5" :src="$common.getThumbnail(post)" sizes="sm:100vw md:50vw lg:400px" format="webp" :alt="decodeHtml(post.title.rendered)"></nuxt-img>
                             </div>
                             <div class="post-content media-body text-white">
                                 <h5 class="post-title mb-15 text-limit-2-row" v-html="post.title.rendered"></h5>
@@ -112,7 +112,12 @@ export default {
         },
         changeSlide(index){
             this.$refs.slick.goTo(index);
-        }
+        },
+        decodeHtml(html) {
+			var txt = document.createElement("textarea");
+			txt.innerHTML = html;
+			return txt.value;
+		},
 	},
     mounted() {
 

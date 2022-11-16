@@ -12,9 +12,8 @@
                             <div class="carausel-3-columns-item d-flex bg-grey has-border p-25 hover-up-2 transition-normal border-radius-5">
                                 <div class="post-thumb post-thumb-64 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
                                     <nuxt-link class="color-white" :to="{ name: 'category-slug', params: { slug: category.slug } }">
-                                        <nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" src="https://via.placeholder.com/350x350" :alt="category.name" />
+                                        <nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" width="auto" height="auto" src="https://via.placeholder.com/350x350" :alt="category.name" />
                                     </nuxt-link>
-
                                 </div>
                                 <div class="post-content media-body">
                                     <h6> <nuxt-link :to="{ name: 'category-slug', params: { slug: category.slug } }">{{category.name}}</nuxt-link> </h6>

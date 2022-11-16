@@ -1,11 +1,11 @@
 <template>
     <div class="widget-area">
-        <div class="mb-30"><a href="#" target="_blank"><nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp"
-                    src="https://via.placeholder.com/1500x1500?text=Top+Sidebar+Ads" style="max-width: 100%"
-                    alt="Top Sidebar Ads" /></a></div>
+        <div class="mb-30">
+            <a href="javascript:void(0)" target="_blank">
+                <nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" src="https://via.placeholder.com/1500x1500?text=Top+Sidebar+Ads" width="auto" height="auto" style="max-width: 100%" alt="Top Sidebar Ads" />
+            </a>
+        </div>
         <div class="sidebar-widget widget-about mb-50 pt-30 pr-30 pb-30 pl-30 bg-white border-radius-5 has-border  wow fadeInUp animated">
-            <!-- <nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" class="about-author-img mb-25" src="https://via.placeholder.com/150x150"
-                alt="Hello, I&#039;m Hamza Hameed" /> -->
             <h5 class="mb-20">Hello, I&#039;m Hamza Hameed</h5>
             <p class="font-medium text-muted">Hi, I’m Hamza Hameed, a Lahore native, who start his career as a freelancer two years ago. As time pass I learned different skills and blogging is one them which I loved to do in free time.</p>
             <strong>Follow me: </strong>
@@ -73,8 +73,8 @@
             </div>
         </div>
         <div class="mt-30 mb-30">
-            <a href="#" target="_blank">
-                <nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" src="https://via.placeholder.com/1500x1500?text=Bottom+Sidebar+Ads" style="max-width: 100%" alt="Bottom Sidebar Ads" />
+            <a href="javascript:void(0)" target="_blank">
+                <nuxt-img sizes="sm:100vw md:50vw lg:400px" format="webp" width="auto" height="auto" src="https://via.placeholder.com/1500x1500?text=Bottom+Sidebar+Ads" style="max-width: 100%" alt="Bottom Sidebar Ads" />
             </a>
         </div>
     </div>

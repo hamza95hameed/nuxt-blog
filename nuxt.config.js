@@ -30,7 +30,7 @@ export default {
 			{
 				hid: "canonical",
 				rel: "canonical",
-				href: process.env.BASE_URL,
+				href: 'https://newsparho.vercel.app/',
 			},
 			{ rel: 'icon', type: 'image/x-icon',   href: '/imgs/general/favicon.png' },
 			{ rel: 'stylesheet', type: 'text/css', href: '/css/style.css' },
