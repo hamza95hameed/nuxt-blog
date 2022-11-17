@@ -100,7 +100,68 @@
                 </div>
             </div>
         </div>
-
+        <div v-if="type == 'feature-slider'">
+            <div class="featured-slider-2">
+                <div class="featured-slider-2-items">
+                    <div class="slider-single">
+                        <div class="post-thumb position-relative">
+                            <div class="thumb-overlay position-relative shimmer">
+                                <div class="post-content-overlay">
+                                    <div class="container">
+                                        <div class="entry-meta meta-0 font-small mb-10">
+                                            <span class="text-warning shimmer w-25" id="category"></span>
+                                        </div> 
+                                        <h5 class="post-title font-weight-900 shimmer w-100" id="desc"></h5> 
+                                        <h5 class="post-title font-weight-900 mb-20 shimmer w-75" id="desc"></h5> 
+                                        <div class="entry-meta meta-1 font-small text-white mt-10 pr-5 pl-5">
+                                            <span class="post-on shimmer" id="tag"></span>
+                                            <span class="post-by shimmer" id="tag"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container position-relative">
+                    <div class="arrow-cover color-white"></div>
+                    <div class="featured-slider-2-nav-cover">
+                        <div class="featured-slider-2-nav">
+                            <div class="slider-post-thumb mr-15 mt-20 position-relative">
+                                <div class="d-flex hover-up-2 transition-normal">
+                                    <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden shimmer">
+                                        <img />
+                                    </div>
+                                    <div class="post-content media-body text-white">
+                                        <h5 class="post-title font-weight-900 shimmer w-100" id="desc"></h5> 
+                                        <h5 class="post-title font-weight-900 mb-20 shimmer w-75" id="desc"></h5> 
+                                        <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
+                                            <span class="post-on shimmer" id="tag"></span>
+                                            <span class="post-by shimmer" id="tag"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-post-thumb mr-15 mt-20 position-relative">
+                                <div class="d-flex hover-up-2 transition-normal">
+                                    <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden shimmer">
+                                        <img />
+                                    </div>
+                                    <div class="post-content media-body text-white">
+                                        <h5 class="post-title font-weight-900 shimmer w-100" id="desc"></h5> 
+                                        <h5 class="post-title font-weight-900 mb-20 shimmer w-75" id="desc"></h5> 
+                                        <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
+                                            <span class="post-on shimmer" id="tag"></span>
+                                            <span class="post-by shimmer" id="tag"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>

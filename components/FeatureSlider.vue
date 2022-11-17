@@ -1,23 +1,25 @@
 <template>
     <div class="featured-slider-2">
         <div class="featured-slider-2-items">
+            <Shimmer v-if="loading" :loop="1" :type="'feature-slider'"></Shimmer> 
             <slick ref="slick" :options="slickOptions" v-if="posts.length > 0">
                 <div class="slider-single" v-for="post in posts.slice(0,4)" :key="post.id">
                     <div class="post-thumb position-relative">
-                        <nuxt-img class="thumb-overlay position-relative" :src="$common.getThumbnail(post)" sizes="sm:100vw md:50vw lg:400px" format="webp" height="600" :alt="decodeHtml(post.title.rendered)"></nuxt-img>
-                        <div class="post-content-overlay">
-                            <div class="container">
-                                <div class="entry-meta meta-0 font-small mb-20">
-                                    <nuxt-link :to="{ name: 'category-slug', params: { slug: $common.getCategory(post).toLowerCase() }}">
-                                        <span class="post-cat text-warning text-uppercase">{{ $common.getCategory(post) }}</span>
-                                    </nuxt-link>     
-                                </div>
-                                <h1 class="post-title mb-20 font-weight-900 text-white">
-                                    <nuxt-link class="text-white text" :to="{ name: 'post-slug', params: { slug: post.slug }}" v-html="post.title.rendered"></nuxt-link>
-                                </h1>
-                                <div class="entry-meta meta-1 font-small text-white mt-10 pr-5 pl-5">
-                                    <span class="post-on">{{ $moment(post.date).format("MMM D, Y") }}</span>
-                                    <span class="hit-count has-dot">{{Math.floor(Math.random() * (1000 - 1 + 1)) + 1}} views</span>
+                        <div class="thumb-overlay position-relative" :style="'background-image: url('+$common.getThumbnail(post)+')'">
+                            <div class="post-content-overlay">
+                                <div class="container">
+                                    <div class="entry-meta meta-0 font-small mb-20">
+                                        <nuxt-link :to="{ name: 'category-slug', params: { slug: $common.getCategory(post).toLowerCase() }}">
+                                            <span class="post-cat text-warning text-uppercase">{{ $common.getCategory(post) }}</span>
+                                        </nuxt-link>     
+                                    </div>
+                                    <h1 class="post-title mb-20 font-weight-900 text-white">
+                                        <nuxt-link class="text-white text" :to="{ name: 'post-slug', params: { slug: post.slug }}" v-html="post.title.rendered"></nuxt-link>
+                                    </h1>
+                                    <div class="entry-meta meta-1 font-small text-white mt-10 pr-5 pl-5">
+                                        <span class="post-on">{{ $moment(post.date).format("MMM D, Y") }}</span>
+                                        <span class="hit-count has-dot">{{Math.floor(Math.random() * (1000 - 1 + 1)) + 1}} views</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -66,11 +68,6 @@ export default {
 			},
             loading: true,
             offset: 10,
-            content: '',
-            totalreadingtime: '',
-            readingtime:'',
-            word_count:'',
-            timer:'',
             slickOptions: {
                 dots: false,
                 infinite: false,

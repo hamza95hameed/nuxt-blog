@@ -14,67 +14,74 @@
                     <div class="post-module-3">
                         <div class="loop-list loop-list-style-1">
                             <Shimmer v-if="loading" :loop="5" :type="'list'"></Shimmer>
-                            <article class="hover-up-2 transition-normal wow fadeInUp animated" v-for="post in displayedPosts" :key="post.id">
-                                <div class="row mb-40 list-style-2">
-                                    <div class="col-md-4">
-                                        <div class="post-thumb position-relative border-radius-5">
-                                            <div class="img-hover-slide border-radius-5 position-relative"
-                                                :style="'background-image: url('+$common.getThumbnail(post)+')'">
-                                                <nuxt-link class="img-link" :to="{ name: 'post-slug', params: { slug: post.slug }}"></nuxt-link>
-                                            </div>
-                                            <ul class="social-share">                                                
-                                                <li>
-                                                    <ShareNetwork
-                                                    network="facebook"
-                                                    :url="post.link"
-                                                    :title="post.title.rendered"
-                                                    :description="post.excerpt.rendered"
-                                                    class="fb"
-                                                    >
-                                                    <i class="elegant-icon social_facebook"></i>
-                                                </ShareNetwork>
-                                                </li>
-                                                <li><ShareNetwork
-                                                    network="twitter"
-                                                    :url="post.link"
-                                                    :title="post.title.rendered"
-                                                    :description="post.excerpt.rendered"
-                                                    class="tw"
-                                                    ><i class="elegant-icon social_twitter"></i></ShareNetwork>
-                                                </li>
-                                                <li>
-                                                    <ShareNetwork
-                                                    network="linkedin"
-                                                    :url="post.link"
-                                                    :title="post.title.rendered"
-                                                    :description="post.excerpt.rendered"
-                                                    class="pt"
-                                                    ><i class="elegant-icon social_linkedin"></i></ShareNetwork>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 align-self-center">
-                                        <div class="post-content">
-                                             <div class="entry-meta meta-0 font-small mb-10">
-                                                <nuxt-link :to="{ name: 'category-slug', params: { slug: $common.getCategory(post).toLowerCase() }}">
-                                                    <span class="post-cat text-uppercase">{{ $common.getCategory(post) }}</span>
-                                                </nuxt-link>                               
-                                            </div>
-                                            <h5 class="post-title font-weight-900 mb-20">
-                                                <nuxt-link class="text" :to="{ name: 'post-slug', params: { slug: post.slug }}" v-html="post.title.rendered"></nuxt-link>
-                                            </h5>
-                                            <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
-                                                <span class="post-on">{{ $moment(post.date).format("MMM D, Y") }}</span>
-                                                <span class="time-reading has-dot">{{ $common.readingTime(post) }}</span>
-                                                <span class="post-by has-dot">{{Math.floor(Math.random() * (1000 - 1 + 1)) + 1}} views</span>
+                            <div v-if="displayedPosts > 0">
+                                <article class="hover-up-2 transition-normal wow fadeInUp animated" v-for="post in displayedPosts" :key="post.id">
+                                    <div class="row mb-40 list-style-2">
+                                        <div class="col-md-4">
+                                            <div class="post-thumb position-relative border-radius-5">
+                                                <div class="img-hover-slide border-radius-5 position-relative"
+                                                    :style="'background-image: url('+$common.getThumbnail(post)+')'">
+                                                    <nuxt-link class="img-link" :to="{ name: 'post-slug', params: { slug: post.slug }}"></nuxt-link>
+                                                </div>
+                                                <ul class="social-share">                                                
+                                                    <li>
+                                                        <ShareNetwork
+                                                        network="facebook"
+                                                        :url="post.link"
+                                                        :title="post.title.rendered"
+                                                        :description="post.excerpt.rendered"
+                                                        class="fb"
+                                                        >
+                                                        <i class="elegant-icon social_facebook"></i>
+                                                    </ShareNetwork>
+                                                    </li>
+                                                    <li><ShareNetwork
+                                                        network="twitter"
+                                                        :url="post.link"
+                                                        :title="post.title.rendered"
+                                                        :description="post.excerpt.rendered"
+                                                        class="tw"
+                                                        ><i class="elegant-icon social_twitter"></i></ShareNetwork>
+                                                    </li>
+                                                    <li>
+                                                        <ShareNetwork
+                                                        network="linkedin"
+                                                        :url="post.link"
+                                                        :title="post.title.rendered"
+                                                        :description="post.excerpt.rendered"
+                                                        class="pt"
+                                                        ><i class="elegant-icon social_linkedin"></i></ShareNetwork>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
+                                        <div class="col-md-8 align-self-center">
+                                            <div class="post-content">
+                                                 <div class="entry-meta meta-0 font-small mb-10">
+                                                    <nuxt-link :to="{ name: 'category-slug', params: { slug: $common.getCategory(post).toLowerCase() }}">
+                                                        <span class="post-cat text-uppercase">{{ $common.getCategory(post) }}</span>
+                                                    </nuxt-link>                               
+                                                </div>
+                                                <h5 class="post-title font-weight-900 mb-20">
+                                                    <nuxt-link class="text" :to="{ name: 'post-slug', params: { slug: post.slug }}" v-html="post.title.rendered"></nuxt-link>
+                                                </h5>
+                                                <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
+                                                    <span class="post-on">{{ $moment(post.date).format("MMM D, Y") }}</span>
+                                                    <span class="time-reading has-dot">{{ $common.readingTime(post) }}</span>
+                                                    <span class="post-by has-dot">{{Math.floor(Math.random() * (1000 - 1 + 1)) + 1}} views</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                </article>
+                            </div>
+                            <div v-else>
+                                <div class="text-md-center text-lg-left">
+                                    <h1 class="mb-30 font-weight-900">No Bookmark Found</h1>
                                 </div>
-                            </article>
+                            </div>
                         </div>
-                        <div class="pagination-area  mb-30 wow fadeInUp animated justify-content-start">
+                        <div class="pagination-area  mb-30 wow fadeInUp animated justify-content-start"  v-if="displayedPosts > 0">
                             <nav>
                                 <ul class="pagination">
                                     <li class="page-item" >
@@ -151,9 +158,11 @@ export default {
         
     },
     async mounted() { 
-        let posts    = await this.$axios.get('/posts?include='+JSON.parse(localStorage.bookmark), { params: this.queryOptions })
-        this.posts   = posts.data
-        this.loading = false
+        if(localStorage.bookmark != undefined){
+            let posts     = await this.$axios.get('/posts?include='+JSON.parse(localStorage.bookmark), { params: this.queryOptions })
+            this.posts    = posts.data
+        }
+        this.loading  = false
     }
 }
 </script>
