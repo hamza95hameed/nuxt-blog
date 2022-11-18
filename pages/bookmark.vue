@@ -14,7 +14,7 @@
                     <div class="post-module-3">
                         <div class="loop-list loop-list-style-1">
                             <Shimmer v-if="loading" :loop="5" :type="'list'"></Shimmer>
-                            <div v-if="displayedPosts > 0">
+                            <div v-if="posts.length > 0">
                                 <article class="hover-up-2 transition-normal wow fadeInUp animated" v-for="post in displayedPosts" :key="post.id">
                                     <div class="row mb-40 list-style-2">
                                         <div class="col-md-4">
@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="pagination-area  mb-30 wow fadeInUp animated justify-content-start"  v-if="displayedPosts > 0">
+                        <div class="pagination-area  mb-30 wow fadeInUp animated justify-content-start"  v-if="posts.length > 0">
                             <nav>
                                 <ul class="pagination">
                                     <li class="page-item" >

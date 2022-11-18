@@ -86,7 +86,8 @@ export default {
         return {
             latestPosts:[],
             queryOptions: {
-				_embed: true //Response should include embedded resources.
+				_embed: true,
+                per_page:15
 			},
             loading: true,
             category : [],
