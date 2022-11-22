@@ -18,7 +18,7 @@
                                                 <div class="post-thumb thumb-overlay img-hover-slide position-relative" :style="'background-image: url('+$common.getThumbnail(post)+')'">
                                                     <nuxt-link class="img-link" :to="{ name: 'post-slug', params: { slug: post.slug }}"></nuxt-link>
                                                     <span class="top-left-icon bg-warning">
-                                                        <button class="elegant-icon bg-transparent border-0" :data-bookmark="'bookmark-'+post.id" :class="postIDs.indexOf(post.id) !== -1 ? 'icon_star': 'icon_star_alt'" v-on:click="$common.bookmark(post)"></button>
+                                                        <button class="elegant-icon bg-transparent border-0" :class="postIDs.indexOf(post.id) !== -1 || postID == post.id ? 'icon_star': 'icon_star_alt'" v-on:click="bookmark(post)"></button>
                                                     </span>
                                                     <ul class="social-share">                                                        
                                                         <li>
@@ -131,7 +131,7 @@
                                                 <h5 class="post-title font-weight-900 mb-20">
                                                     <nuxt-link class="text" :to="{ name: 'post-slug', params: { slug: latestPost.slug }}" v-html="latestPost.title.rendered"></nuxt-link>
                                                     <span class="post-format-icon">
-                                                        <button class="elegant-icon bg-transparent border-0" :class="postIDs.indexOf(latestPost.id) !== -1 ? 'icon_star': 'icon_star_alt'" :data-bookmark="'bookmark-'+latestPost.id" v-on:click="$common.bookmark(latestPost)"></button>
+                                                        <button class="elegant-icon bg-transparent border-0" :class="postIDs.indexOf(latestPost.id) !== -1 || postID == latestPost.id ? 'icon_star': 'icon_star_alt'" v-on:click="bookmark(latestPost)"></button>
                                                     </span>
                                                 </h5>
                                                 <div
@@ -207,9 +207,25 @@ export default {
                 ]
             },
             postIDs:[],
+            postID:null
         }
     },
-    methods: {},
+    methods: {
+        bookmark(post){
+			if(this.postIDs.indexOf(post.id) === -1){
+				this.postIDs[this.postIDs.length] = post.id;
+				this.postID = post.id
+			}
+			else{
+				var index = this.postIDs.indexOf(post.id);
+				if (index > -1) {
+					this.postIDs.splice(index, 1);
+				}
+				this.postID = null
+			}
+			this.$common.bookmark(post)
+		},
+    },
     async mounted() {
 		let posts        = await this.$axios.get('/posts?categories=3025',{ params: this.queryOptions })
         this.posts       = posts.data.slice()

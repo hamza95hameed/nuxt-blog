@@ -37,7 +37,7 @@
                                             <div class="thumb-overlay img-hover-slide position-relative" :style="'background-image: url('+$common.getThumbnail(post)+')'">
                                                 <nuxt-link class="img-link" :to="{ name: 'post-slug', params: { slug: post.slug }}"></nuxt-link>
                                                 <span class="top-left-icon bg-warning">
-                                                    <button class="elegant-icon bg-transparent border-0" :data-bookmark="'bookmark-'+post.id" :class="postIDs.indexOf(post.id) !== -1 ? 'icon_star': 'icon_star_alt'" v-on:click="$common.bookmark(post)"></button>
+                                                    <button class="elegant-icon bg-transparent border-0" :class="postIDs.indexOf(post.id) !== -1 || postID == post.id ? 'icon_star': 'icon_star_alt'" v-on:click="bookmark(post)"></button>
                                                 </span>
                                                 <div class="post-content-overlay text-white ml-30 mr-30 pb-30">
                                                     <div class="entry-meta meta-0 font-small mb-20" >
@@ -65,7 +65,7 @@
                             <div class="post-thumb thumb-overlay img-hover-slide position-relative" :style="'background-image: url('+$common.getThumbnail(post)+')'">
                                 <nuxt-link class="img-link" :to="{ name: 'post-slug', params: { slug: post.slug }}"></nuxt-link>
                                 <span class="top-left-icon bg-warning">
-                                    <button class="elegant-icon bg-transparent border-0" :data-bookmark="'bookmark-'+post.id" :class="postIDs.indexOf(post.id) !== -1 ? 'icon_star': 'icon_star_alt'" v-on:click="$common.bookmark(post)"></button>
+                                    <button class="elegant-icon bg-transparent border-0" :class="postIDs.indexOf(post.id) !== -1 || postID == post.id ? 'icon_star': 'icon_star_alt'" v-on:click="bookmark(post)"></button>
                                 </span>
                                 <ul class="social-share">                                    
                                     <li>
@@ -99,10 +99,10 @@
                                 </ul>
                             </div>
                             <div class="post-content p-30">
-                                <div class="entry-meta meta-0 font-small mb-20" >
-                                    <nuxt-link class="img-link" :to="{ name: 'category-slug', params: { slug: $common.getCategory(post).toLowerCase() }}">
-                                        <span class="post-cat text-success text-uppercase">{{$common.getCategory(post)}}</span>
-                                    </nuxt-link>                               
+                                <div class="entry-meta meta-0 font-small mb-20">
+                                    <nuxt-link :to="{ name: 'category-slug', params: { slug: $common.getCategory(post).toLowerCase() }}">
+                                        <span class="post-cat text-info text-uppercase">{{ $common.getCategory(post) }}</span>
+                                    </nuxt-link>                            
                                 </div>
                                 <div class="d-flex post-card-content">
                                     <h5 class="post-title mb-20 font-weight-900">
@@ -122,7 +122,7 @@
                             <div class="post-thumb thumb-overlay img-hover-slide position-relative" :style="'background-image: url('+$common.getThumbnail(post)+')'">
                                 <nuxt-link class="img-link" :to="{ name: 'post-slug', params: { slug: post.slug }}"></nuxt-link>
                                 <span class="top-left-icon bg-warning">
-                                    <button class="elegant-icon bg-transparent border-0" :data-bookmark="'bookmark-'+post.id" :class="postIDs.indexOf(post.id) !== -1 ? 'icon_star': 'icon_star_alt'" v-on:click="$common.bookmark(post)"></button>
+                                    <button class="elegant-icon bg-transparent border-0" :class="postIDs.indexOf(post.id) !== -1 || postID == post.id ? 'icon_star': 'icon_star_alt'" v-on:click="bookmark(post)"></button>
                                 </span>
                                 <ul class="social-share">                                
                                     <li>
@@ -156,7 +156,7 @@
                                 </ul>
                             </div>
                             <div class="post-content p-30">
-                                <div class="entry-meta meta-0 font-small mb-20" >
+                                <div class="entry-meta meta-0 font-small mb-20">
                                     <nuxt-link :to="{ name: 'category-slug', params: { slug: $common.getCategory(post).toLowerCase() }}">
                                         <span class="post-cat text-info text-uppercase">{{ $common.getCategory(post) }}</span>
                                     </nuxt-link>                               
@@ -213,11 +213,24 @@ export default {
             category : [],
             tags : [],
             postIDs:[],
-            bookmark:false,
+            postID:null,
 		}
 	},
     methods: {
-
+        bookmark(post){
+			if(this.postIDs.indexOf(post.id) === -1){
+				this.postIDs[this.postIDs.length] = post.id;
+				this.postID = post.id
+			}
+			else{
+				var index = this.postIDs.indexOf(post.id);
+				if (index > -1) {
+					this.postIDs.splice(index, 1);
+				}
+				this.postID = null
+			}
+			this.$common.bookmark(post)
+		},
         next() {
             this.$refs.slick.next();
         },

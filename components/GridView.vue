@@ -19,7 +19,7 @@
                   <div class="post-thumb thumb-overlay img-hover-slide position-relative" :style="'background-image: url('+$common.getThumbnail(post)+')'">
 					<nuxt-link class="img-link" :to="{ name: 'post-slug', params: { slug: post.slug } }"></nuxt-link>
 					<span class="top-left-icon bg-warning">
-						<button class="elegant-icon bg-transparent border-0" :class="postIDs.indexOf(post.id) !== -1 || (postID == post.id && bookmarkClass) ? 'icon_star': 'icon_star_alt'" :data-bookmark="'bookmark-'+post.id" v-on:click="bookmark(post)"></button>
+						<button class="elegant-icon bg-transparent border-0" :class="postIDs.indexOf(post.id) !== -1 || postID == post.id ? 'icon_star': 'icon_star_alt'" :data-bookmark="'bookmark-'+post.id" v-on:click="bookmark(post)"></button>
 					</span>
                     <ul class="social-share">						
 						<li>
@@ -111,14 +111,22 @@ export default {
 			perPage: 9,
 			pages: [],
 			postIDs:[],
-            postID:null,
-			bookmarkClass:false
+            postID:null
 		}
 	},
 	methods: {
 		bookmark(post){
-			this.postID        = post.id;
-			this.bookmarkClass = !this.bookmarkClass;
+			if(this.postIDs.indexOf(post.id) === -1){
+				this.postIDs[this.postIDs.length] = post.id;
+				this.postID = post.id
+			}
+			else{
+				var index = this.postIDs.indexOf(post.id);
+				if (index > -1) {
+					this.postIDs.splice(index, 1);
+				}
+				this.postID = null
+			}
 			this.$common.bookmark(post)
 		},
 		setPages () {
