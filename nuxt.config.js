@@ -38,7 +38,17 @@ export default {
 			{ rel: 'stylesheet', type: 'text/css', href: '/css/responsive.css' },
 			{ rel: 'stylesheet', type: 'text/css', href: '/css/custom.css' },
 			{ rel: 'stylesheet', type: 'text/css', href: '/contact/css/contact-public.css' }
-		]
+		],
+
+		script: [
+            // ...
+            {
+                hid: 'tawk.to',
+                src:
+                    'https://embed.tawk.to/63be6a53c2f1ac1e202cd30a/1gmfsulra',
+                defer: true
+            }
+        ]
 	},
 
 
