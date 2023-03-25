@@ -111,7 +111,7 @@ export default {
             this.$refs.slick.goTo(index);
         },
         decodeHtml(html) {
-			var txt = document.createElement("textarea");
+			let txt = document.createElement("textarea");
 			txt.innerHTML = html;
 			return txt.value;
 		},
@@ -119,9 +119,9 @@ export default {
     mounted() {
 
         this.getData();
-        var postArray = localStorage.bookmark == undefined ? []: JSON.parse(localStorage.bookmark);
-        for (let index = 0; index < postArray.length; index++) {
-            this.postIDs[this.postIDs.length] = postArray[index]
+        let postArray = localStorage.bookmark == undefined ? []: JSON.parse(localStorage.bookmark);
+        for (let index of postArray) {
+            this.postIDs[this.postIDs.length] = index
         }
         
 	}

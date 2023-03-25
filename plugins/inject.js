@@ -1,4 +1,3 @@
-import axios from 'axios'
 const common = {
     name: 'Common',
     getTag(post) {
@@ -45,13 +44,13 @@ const common = {
         }
     },
     bookmark(post){
-        var postIDs = localStorage.bookmark == undefined ? []: JSON.parse(localStorage.bookmark);
+        let postIDs = localStorage.bookmark == undefined ? []: JSON.parse(localStorage.bookmark);
         if(postIDs.indexOf(post.id) === -1){
             postIDs[postIDs.length] = post.id;
             localStorage.setItem("bookmark" , JSON.stringify(postIDs))
         }
         else{
-            var index = postIDs.indexOf(post.id);
+            let index = postIDs.indexOf(post.id);
             if (index > -1) {
                 postIDs.splice(index, 1);
             }

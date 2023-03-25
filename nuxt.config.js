@@ -71,16 +71,15 @@ export default {
 		'nuxt-compress'
 	],
 
-	// Modules: https://go.nuxtjs.dev/config-modules
-	modules: [
-	],
-
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {
 	},
+	
 	axios: {
 		baseURL: 'https://www.newsparho.com/wp-json/wp/v2', // Used as fallback if no runtime config is provided
 	},
+
+	// Modules: https://go.nuxtjs.dev/config-modules
 	modules: [
 		'@nuxtjs/axios',
 		'vue-social-sharing/nuxt',

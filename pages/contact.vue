@@ -12,9 +12,7 @@
 
 		<div style="height: 400px; width: 100%; position: relative; text-align: right;">
 			<div style="height: 400px; width: 100%; overflow: hidden; background: none!important;">
-				<iframe width="100%" height="500"
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d755.715438418307!2d-73.99094687075181!3d40.74306741478797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a4470b3c0d%3A0xd29206f3c548e48d!2s19%20W%2024th%20St%2C%20New%20York%2C%20NY%2010010!5e0!3m2!1sen!2sus!4v1650618578775!5m2!1sen!2sus"
-					frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+				<iframe width="100%" height="500" title="Google Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d755.715438418307!2d-73.99094687075181!3d40.74306741478797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a4470b3c0d%3A0xd29206f3c548e48d!2s19%20W%2024th%20St%2C%20New%20York%2C%20NY%2010010!5e0!3m2!1sen!2sus!4v1650618578775!5m2!1sen!2sus"></iframe>
 			</div>
 		</div>
 

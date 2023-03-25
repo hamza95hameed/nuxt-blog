@@ -121,7 +121,7 @@ export default {
 				this.postID = post.id
 			}
 			else{
-				var index = this.postIDs.indexOf(post.id);
+				let index = this.postIDs.indexOf(post.id);
 				if (index > -1) {
 					this.postIDs.splice(index, 1);
 				}
@@ -170,9 +170,9 @@ export default {
 	},
 	async mounted() {
 		this.getData();
-        var postArray = localStorage.bookmark == undefined ? []: JSON.parse(localStorage.bookmark);
-        for (let index = 0; index < postArray.length; index++) {
-            this.postIDs[this.postIDs.length] = postArray[index]
+        let postArray = localStorage.bookmark == undefined ? []: JSON.parse(localStorage.bookmark);
+        for (let index of postArray) {
+            this.postIDs[this.postIDs.length] = index
         }
 	}
 }
