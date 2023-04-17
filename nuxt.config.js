@@ -85,13 +85,11 @@ export default {
 		'vue-social-sharing/nuxt',
 		'nuxt-moment',
 		'@nuxt/image',
-		'@nuxtjs/google-analytics'
 	],
 	generate: {
 		dir: 'public'	
 	},
-
-	googleAnalytics: {
-		id: 'G-KY40JBW0Z9'
+	env: {
+		googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID
 	}
 }
